@@ -1,0 +1,21 @@
+.banner{
+    
+        color: black;
+        text-align: right;
+        padding: 32px;
+        border-bottom: 3px solid black;
+        justify-content: flex-end;
+        flex-direction: row;
+        align-items: center;
+    
+
+    &-title{
+        padding-left: 32px;
+    }
+
+    &-logo{
+        height: 45px;
+        width: 45px;
+    }
+
+}

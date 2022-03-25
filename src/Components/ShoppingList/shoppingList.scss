@@ -1,0 +1,24 @@
+.shoppingList{
+    display: flex;
+    flex-wrap: wrap;
+
+    &-ul{
+        list-style-type: none;
+        margin: 16px;
+        padding: 16px;
+        color: black;
+        
+    }
+    &-li{
+        display: flex;
+        flex-direction: column;
+        border: 1px greenyellow solid;
+        margin: 16px;
+        padding: 16px;
+        text-align: center;
+        justify-content: flex-end;
+        flex-direction: row;
+        align-items: center;
+    }
+
+}
