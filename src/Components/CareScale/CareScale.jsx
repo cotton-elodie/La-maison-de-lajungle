@@ -1,13 +1,13 @@
 import React from 'react'
 
-const CareScale = ({scaleValue, careType}) => {
+const CareScale = (props) => {
 
     const range=[1,2,3];
-    const scaleType = careType === 'light' ? '☀️' : '💧';
+    const scaleType = props.careType === 'light' ? '☀️' : '💧';
     
         return (
             <div>
-                {range.map((rangeElem) => scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
+                {range.map((rangeElem) => props.scaleValue >= rangeElem ? <span key={rangeElem.toString()}>{scaleType}</span> : null
                 )}
             </div>
         )
