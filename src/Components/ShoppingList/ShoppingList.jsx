@@ -15,15 +15,16 @@ function ShoppingList() {
     <div className="shoppingList">
       <ul className="shoppingList-ul">
         {categories.map((cat) => (
-          <li key={cat.id}></li>
+          <li key={cat.id}>{cat}</li>
         ))}
       </ul>
       <ul className="shoppingList-ul">
         {plantList.map((plant) => (
           <PlantItem
+            key={plant.id}
             id={plant.id}
-            name={plant.name}
             cover={plant.cover}
+            name={plant.name}
             water={plant.water}
             light={plant.light}
           />
