@@ -1,23 +1,30 @@
 import React, { useState } from "react";
 import "../Cart/cart.scss";
 
-function Cart() {
+function Cart({ cart, updateCart }) {
   const monteraPrice = 8;
 
-  const [cart, setCart] = useState(0);
+  // const [cart, setCart] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
   return isOpen ? (
     <div className="cart">
+      <button className="cart-button" onClick={() => setIsOpen(false)}>
+        Fermer
+      </button>
       <h2 className="cart-title">Panier</h2>
-      <div>
-        Monstera : {monteraPrice}€
-        <button onClick={() => setCart(cart + 1)}>Ajouter</button>
-      </div>
-      <h3>Total : {monteraPrice + cart}€</h3>
+      {cart.map(({ name, price, amount }, index) => (
+        <div key={`${name} - ${index}`}>
+          {name} {price}€ x {amount}
+        </div>
+      ))}
+      <h3>Total : {monteraPrice * cart}€</h3>
+      <button onClick={() => updateCart(0)}>Vider le panier</button>
     </div>
   ) : (
-    <button onClick={() => setIsOpen(true)}>Ouvrir le panier</button>
+    <div className="cart-closed">
+      <button onClick={() => setIsOpen(true)}>Ouvrir le panier</button>
+    </div>
   );
 }
 
